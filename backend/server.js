@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://UserEinar:Einar159@cluster0.3jwwe.mongodb.net/<Cluster0>?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true }
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://UserEinar:@cluster0.3jwwe.mongodb.net/<Cluster0>?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true }
 );
 const connection = mongoose.connection;
 connection.once('open', () => {
