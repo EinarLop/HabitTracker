@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Box, Icon } from "@chakra-ui/core";
-import { Link } from 'react-router-dom';
+import { Box, Icon, Flex } from "@chakra-ui/core";
+import { Link, NavLink } from 'react-router-dom';
 
 
 class Navbar extends Component {
@@ -11,17 +11,32 @@ class Navbar extends Component {
 
         }
 
+        this.changeBackground = this.changeBackground.bind(this)
+        this.changeBackground2 = this.changeBackground2.bind(this)
+
+    }
+
+    changeBackground(e) {
+        e.target.style.textDecoration = 'underline';
+    }
+    changeBackground2(e) {
+        e.target.style.textDecoration = 'none';
     }
 
     render() {
         return (
-            <Box bg='tomato'>
-                <Icon name='sun' />
-                <Link to='/'>Current Goals</Link>
-                <Link to='/createGoal'>Create Goal</Link>
+            <Flex justify='flex-start' bg='white' >
+                <Box margin='10px'><Icon color='#F6AD55' size='25px ' name='sun' /></Box>
+                <Box margin='10px' ><Link to='/' onMouseEnter={this.changeBackground} onMouseLeave={this.changeBackground2}  >Current Goals</Link></Box>
+                <Box margin='10px'><Link to='/createGoal' onMouseEnter={this.changeBackground} onMouseLeave={this.changeBackground2} >Create Goal</Link></Box>
+                <Box margin='10px'><Link to='/closed' onsele onMouseEnter={this.changeBackground} onMouseLeave={this.changeBackground2} >Closed Goals</Link></Box>
 
-                <Link to='/closed'>Closed Goals</Link>
-            </Box>
+
+
+
+
+
+            </Flex>
         )
     }
 }

@@ -32,7 +32,7 @@ class HabitList extends Component {
         return (
 
 
-            <div>
+            <Box p='10px'>
 
                 {this.state.habits.map((habits, i) =>
                     <Box key={habits._id}>
@@ -41,7 +41,7 @@ class HabitList extends Component {
                         <HabitCalendar id={habits._id} />
                     </Box>)}
 
-            </div>
+            </Box>
 
 
 

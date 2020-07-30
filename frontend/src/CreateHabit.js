@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Box, FormControl, FormLabel, Input, Button, Flex } from "@chakra-ui/core";
+import { Box, FormControl, FormLabel, Input, Button, Flex, Text } from "@chakra-ui/core";
 
 
 const axios = require('axios').default;
@@ -35,6 +35,9 @@ class CreateHabit extends Component {
             color: val,
 
         })
+
+
+
         console.log(val)
     }
 
@@ -67,7 +70,7 @@ class CreateHabit extends Component {
 
     render() {
         return (
-            <div>
+            <Box p='10px'>
                 <FormControl >
                     <FormLabel htmlFor="title">Title</FormLabel>
                     <Input id="title" value={this.state.title} onChange={(e) => this.onChange(e, "title")} />
@@ -84,7 +87,7 @@ class CreateHabit extends Component {
                     <Input type='number' id="numberOfDays" onChange={(e) => this.onChange(e, "numberOfDays")} />
                 </FormControl>
 
-                <Flex flexDirection='row' justify='space-around'>
+                <Flex marginTop='15px' marginBottom='15px' flexDirection='row' justify='space-around'>
                     <Box width='20px' height='20px' rounded='50%' bg='#63B3ED' value='#63B3ED' onClick={(e) => this.selectColor(e, '#63B3ED')}></Box>
                     <Box width='20px' height='20px' rounded='50%' bg='#4FD1C5' value='#4FD1C5' onClick={(e) => this.selectColor(e, '#4FD1C5')}></Box>
                     <Box width='20px' height='20px' rounded='50%' bg='#F687B3' value='#F687B3' onClick={(e) => this.selectColor(e, '#F687B3')}></Box>
@@ -92,14 +95,14 @@ class CreateHabit extends Component {
                     <Box width='20px' height='20px' rounded='50%' bg='#B794F4' value='#B794F4' onClick={(e) => this.selectColor(e, '#B794F4')}></Box>
 
                 </Flex>
+                <Text textAlign='center'>Example</Text>
+                <Box bg={this.state.color} border='1px' w='50px' h='50px' margin='auto' ><Text >1</Text></Box>
+                <Button marginTop='10px' type='submit' onClick={this.onSubmit}>Submit</Button>
 
 
-                <Button type='submit' onClick={this.onSubmit}>Submit</Button>
 
 
-
-
-            </div>
+            </Box>
         );
     }
 

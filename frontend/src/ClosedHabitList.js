@@ -36,7 +36,7 @@ class ClosedHabitList extends Component {
 
 
             <div>
-                hola
+
                 {this.state.habits.map((habits, i) =>
                     <Box key={habits._id}>
 
